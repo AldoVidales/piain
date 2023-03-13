@@ -6,7 +6,7 @@ const RegisterModal = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   // State para almacenar los datos del formulario
-  const [formData, setFormData] = useState({
+  const [formDataRegister, setFormData] = useState({
     name: '',
     password: ''
   });
@@ -14,7 +14,7 @@ const RegisterModal = () => {
   // Función para manejar los cambios en los campos del formulario
   const handleChange = (e) => {
     setFormData({
-      ...formData,
+      ...formDataRegister,
       [e.target.name]: e.target.value
     });
   }
@@ -23,7 +23,7 @@ const RegisterModal = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Envía los datos del formulario a tu backend para la autenticación
-    console.log(formData);
+    console.log(formDataRegister);
     // Cierra el modal una vez que el formulario es enviado
     setIsOpen(false);
   }
@@ -40,7 +40,7 @@ const RegisterModal = () => {
               <input
                 type="name"
                 name="name"
-                value={formData.name}
+                value={formDataRegister.name}
                 onChange={handleChange}
               />
             </label>
@@ -50,7 +50,7 @@ const RegisterModal = () => {
               <input
                 type="password"
                 name="password"
-                value={formData.password}
+                value={formDataRegister.password}
                 onChange={handleChange}
               />
             </label>
@@ -60,7 +60,7 @@ const RegisterModal = () => {
                 <input
                     type="password"
                     name="password"
-                    value={formData.password}
+                    value={formDataRegister.password}
                     onChange={handleChange}
                 />
             </label>
@@ -70,7 +70,7 @@ const RegisterModal = () => {
                 <input
                 type="text"
                 name="product"
-                value={formData.product}
+                value={formDataRegister.product}
                 onChange={handleChange}
                 />
                 </label>
